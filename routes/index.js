@@ -15,8 +15,23 @@ const messages = [
 ];
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Mini-Message Board', messages: messages });
 });
+
+/* Get form page. */
+router.get('/new', function (req, res, next) {
+  res.render('form');
+})
+
+/* Create submit button. */
+router.post('/new', function (req, res) {
+  messages.push({
+    text: req.body.message,
+    user: req.body.author,
+    added: new Date(),
+  });
+  res.redirect('/');
+})
 
 module.exports = router;

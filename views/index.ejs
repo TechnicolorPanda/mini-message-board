@@ -9,9 +9,8 @@
     <h1>Mini-Message Board</h1>
       <% messages.forEach((value, index) => { %>
         <ul>
-          <li>Name: <%= value.name%></li>
-          <li>Text: <%= value.text%></li>
-          <li>Added: <%=value.added%></li>
+          <li>Name: <%= value.user %></li>
+          <li>Text: <%= value.text %></li>
         </ul>
         <%}) %>
   </body>
