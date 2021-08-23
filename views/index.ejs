@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-Message Board</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/new">New message</a>
+    <h1>Mini-Message Board</h1>
+      <% messages.forEach((value, index) => { %>
+        <ul>
+          <li>Name: <%= value.name%></li>
+          <li>Text: <%= value.text%></li>
+          <li>Added: <%=value.added%></li>
+        </ul>
+        <%}) %>
+  </body>
+</html>
